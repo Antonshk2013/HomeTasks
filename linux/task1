@@ -1,0 +1,17 @@
+mkdir animals
+mkdir animals/dogs
+mkdir animals/cats
+mkdir animals/fish
+touch animals/dogs/pluto
+touch animals/cats/garfield
+touch animals/fish/nemo
+cd /var/tmp/
+touch adam
+mkdir home/anton/humans
+cd var/tmp/
+cp var/tmp/adam home/anton/humans/
+touch var/tmp/evA
+mv var/tmp/evA opt/eve
+mv opt/eve home/anton/humans/
+mv opt/eve home/anton/humans/
+history > home/anton/PycharmProjects/HomeTasks/linux/task1
