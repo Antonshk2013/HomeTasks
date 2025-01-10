@@ -10,7 +10,7 @@ def task1():
     C = 3
     D = 4
 
-    print(not((A or B) & (C or D)) == (((not A) or (not B)) or ((not C) & (not D))))
+    print(not((A or B) & (C or D)) == (((not A) or (not B)) or ((not C) and (not D))))
     pass
 
 #  Напишите программу, которая запрашивает у пользователя два логических значения (True или False)
