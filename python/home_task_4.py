@@ -12,6 +12,9 @@ def task1():
 
     print(not((A or B) and (C or D)) == (((not A) or (not B)) or ((not C) and (not D))))
 
+    not ((A or B) and (C or D)) = not (A or B) or not (C or D)
+    not (E and F) = not E or not F
+
 
 #  Напишите программу, которая запрашивает у пользователя два логических значения (True или False)
 #  и выводит результаты следующих логических операций:
