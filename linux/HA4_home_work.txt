@@ -1,0 +1,10 @@
+Sat Jan 18 20:48:49 UTC 2025
+Mofified with text editor
+Filesystem           1K-blocks      Used Available Use% Mounted on
+/dev/root              5120000   2417704   2702296  47% /
+   0 date>home_work.txt
+   1 df ~>>home_work.txt 
+   2 history | tail -3>>home_work.txt 
+cron:x:16:16:cron:/var/spool/cron:/sbin/nologin
+at:x:25:25:at:/var/spool/cron/atjobs:/sbin/nologin
+41
