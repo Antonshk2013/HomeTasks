@@ -5,7 +5,7 @@
 
 CREATE TABLE IF NOT EXISTS weather(
 	city varchar(100),
-	forecast_date date,
+	forecast_date date,Вpip
 	temperature integer
 	);
 
