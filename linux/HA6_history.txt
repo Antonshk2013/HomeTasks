@@ -1,90 +1,10 @@
-ls
-    2  cd
-    3  ls -la
-    4  ls
-    5  pwd
-    6  env
-    7  env export $LOGNAME
-    8  echo $LOGNAME
     9  export SHKARUPAAS_VARIABLE=091224-ptm
-   10  env
-   11  touch /opt/091224-ptm/
-   12  ls -la
-   13  pwd
    14  touch .process_management
-   15  ls -la
    16  date>.process_management
    17  echo "Welcome to Amazone server">>.process_management
    18  ls -la
    19  nano .process_management
-   20  top
-   21  ps -ef
-   22  free
-   23  free | wc -l
-   24  free | head -1
-   25  free | head -2 | tail 1
-   26  free | head -2 | tail -1
-   27  free | head -2 | tail -1 | awk -F " " '{print $2}'
-   28*
    29  free | head -2 | tail -1 | awk -F " " '{print $2}'>>.process_management
-   30  cat .process_management
-   31  ls -la
-   32  rm .process_managment
-   33  ls -la
-   34  top
-   35  top help
-   36  top --help
-   37  top -help
-   38  top | greed 'root'
-   39  top | gred 'root'
-   40  top | grep 'root'
-   41  clear
-   42  top | grep 'root' | wc -l
-   43  top | grep 'root'
-   44  clear
-   45  ps
-   46  top
-   47  pc -ef | grep 'root'
-   48  ps -ef | grep 'root'
-   49*
-   50  ls -la
    51  ps -ef | grep 'root' | wc -l>>.process_management
-   52  cat .process_management
-   53  env
-   54  cat .process_management
-   55  env | grep 'SHKARUPAAS_VARIABLE'
-   56  env | grep 'SHKARUPAAS_VARIABLE' | avk -F "=" 'print $1'
-   57  echo PATH
-   58  ls
-   59  ls -la
-   60  free | head -2 | tail -1 | awk -F " " '{print $2}'
-   61  env | grep 'SHKARUPAAS_VARIABLE'
-   62   env | grep 'SHKARUPAAS_VARIABLE' | awk -F "=" '{print $2}'
-   63   env | grep 'SHKARUPAAS_VARIABLE' | awk -F "=" '{print $1}'
    64   env | grep 'SHKARUPAAS_VARIABLE' | awk -F "=" '{print $1}'>>.process_management
-   65  cat .process_management
-   66  ps -ef
-   67  ps -ef
-   68  ps -ef | avk -F " " 'print $1'
-   69  ps -ef | awk -F " " 'print $1'
-   70  ps -ef | avk -F " " '{print $1 $2 $3} '
-   71  ps -ef | awk -F " " '{print $1 $2 $3} '
-   72  ps -ef | awk -F " " '{print $2+ " "+ $3} '
-   73  ps -ef | awk -F " " '{print $2 + " " + $3} '
-   74  ps -ef
-   75  ps -ef | awk -F " " '{print $2  " "  $3} '
-   76  ps -ef
-   77  ps -ef | grep “/usr/sbin/sshd -D”
-   78  ps -ef | grep /usr/sbin/sshd -D
-   79  ps -ef
-   80  ps -ef | frep /usr/sbin/sshd -D
-   81  ps -ef | grep /usr/sbin/sshd -D
-   82  ps -ef | grep '/usr/sbin/sshd -D'
-   83  ps -ef | grep 'ShkarupaAS' | grep '/usr/sbin/sshd -D'
-   84  ps -ef | grep 'Shkarup' | grep '/usr/sbin/sshd -D'
-   85  ps -ef | grep 'Shkarup' | grep '/usr/sbin/sshd -D' | awk -F " " '{print "PID " $2 " PPID " $3  }'
-   86  cat .process_management
-   87  ls -la
    88  ps -ef | grep 'Shkarup' | grep '/usr/sbin/sshd -D' | awk -F " " '{print "PID " $2 " PPID " $3  }'>>.process_management
-   89  cat .process_management
-   90  history
