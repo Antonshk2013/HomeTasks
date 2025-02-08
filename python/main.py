@@ -1,110 +1,141 @@
-# 01. Для заданного целого числа N подсчитать количество положительных чётных чисел,
-# меньше или равных N (не включая 0).
+import math
+from decimal import Decimal
 
-def count_numbers(n):
-    n = abs(n)
-    count = 0
-    while n > 0:
-        if n % 2 == 0:
-            count += 1
-        n -= 1
+# 1. Дана строка с именем, например, “Иван”. Написать программу,
+# которая печатает приветствие, например, “Привет, Иван!”.
+
+def hello(name: str):
+    return f"Hello, {name}"
+
+
+# 2. Веб-страницы состоят из строк типа "<i>Yay</i>" - выводит текст Yay курсивом.
+# В этом примере, строка-тег “i” означает <i> и </i>, которые окружают слово Yay.
+# Нам дана строка-тэг и текст.
+# Написать программу, которая выводит тег вокруг данного текста,
+# например,  "<i>Yay</i>". Например, ('i', 'Hello') → '<i>Hello</i>'.
+
+def render_html(tag, context):
+    return f"<{tag}>{context}</{tag}>"
+
+# 3. Дана строка. Написать программу, которая создает строку
+# из трех копий последних двух символов данной строки.
+# Данная строка должна быть длиной минимум 2.
+# (('Hello') → 'lololo'), ('ab') → 'ababab'.
+
+def ignorance_string(some_string: str):
+    if len(some_string) > 1:
+        return some_string[-2:]*3
+
+# 4. Дана строка, написать программу, которая печатает строку без первого и последнего
+# символа от данной строки, например, “Иван” - “ва”. “Python” -> “ytho”.
+
+def get_midle_string(some_string: str):
+    return some_string[1:-1]
+
+# 5. Даны две строки разной длины (одна может быть пустой). Написать программу,
+# которая печатает строку вида короткая+длинная+короткая,
+# где короткая строка снаружи длинной.
+# Например, 'Hello', 'hi' → 'hiHellohi'.
+
+def two_string(some_string: str, some_string2: str):
+    if len(some_string)==len(some_string2):
+        return f"Error strin1 == string2"
+    elif len(some_string)>len(some_string2):
+        return f"{some_string2}{some_string}{some_string2}"
     else:
-        return count
+        return f"{some_string}{some_string2}{some_string}"
+
+# 6. Написать программу, которая печатает True,
+# если слова “cat” и “dog” встречаются в строке одинаковое количество раз
+# (и напечатать False - если разное количество раз).
+# 'catdog' → True,
+# 'catcat' → False,
+# '1cat1catodog' → True
 
 
-# 02. Вычислите n-е число ряда Фибоначчи с помощью цикла while.
-# Числа Фибоначчи: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 34
+# Важно: запрещено использовать методы count() и replace()
 
-def fibonacci(n):
-    if n == 0:
-        return "Error"
-    a, b = 0, 1
-    if n == 1:
-        return a
-    if n == 2:
-        return b
-    position = 2
-    while position <= n:
-        a, b = b, a + b
-        position += 1
-    else:
-        return a
-
-# 03. По данному натуральному числу N найдите наибольшую целую степень двойки,
-# не превосходящую N.
-# Выведите показатель степени и саму степень.
-
-def find_degree(n):
-    degree = 0
-    while 2**(degree+1) <= n:
-        degree += 1
-    else:
-        return f"{degree} {2**degree}"
-
-# 04. Дано целое число, не меньшее 2.
-#  Выведите его наименьший натуральный делитель, отличный от 1.
-
-def smallest_natural_number(n: int):
-    dec = n
-    min_dec = n
-    while dec > 1:
-        if n % dec == 0:
-            min_dec = dec
-        dec -= 1
-    else:
-        return min_dec
+def find_tiere(some_string: str):
+    if len(some_string) < 5:
+        return False
+    cat, dog = "cat", "dog"
+    cat_count, dog_count = 0, 0
+    start_position = 0
+    while start_position+3 <= len(some_string):
+        curent_string = some_string[start_position:start_position+3]
+        start_position += 1
+        if cat == curent_string:
+            cat_count += 1
+        elif dog == curent_string:
+            dog_count += 1
+    if cat_count == dog_count:
+        return True
+    return False
 
 
-# 05. Определите сумму всех элементов последовательности, завершающейся числом 0.
-# Числа, следующие за первым нулём, учитывать не нужно.
-# Числа считываем с клавиатуры с помощью input()
-# (Проверку, является ли введённое значение числом, делать необязательно.)
 #
-#
-# 06. Усложняем предыдущую задачу.
-# Определите среднее значение всех элементов последовательности, завершающейся числом 0.
-# Среднее значение - сумма всех элементов, поделенная на их количество.
-#
-#
-# 07. Последовательность состоит из натуральных чисел и завершается числом 0.
-# Определите значение наибольшего элемента последовательности.
-#
-#
-# 08. Последовательность состоит из натуральных чисел и завершается числом 0.
-# Определите индекс наибольшего элемента последовательности.
-# Нумерация элементов начинается с нуля.
-#
-#
-# 09. Дан объём шара X куб. ед. Найдите радиус фигуры.
-#  V = 4 / 3 * pi * r ^ 3
-#
-#  r ^ 3 = 3 * V / 4 * pi
-#
-#  r = (3 * V / 4 * pi) ** 1/3
-#
-#
-# 10. Пользователь вводит вещественное число и число знаков после запятой,
-# до которого нам нужно его округлить это вещественное.
-# Введённые значения и полученный результат вывести через пробел в одной строчке.
-# Воспользуемся функцией round — встроенная функция Python.
-# Ее задача — округлять число с плавающей точкой до той цифры, которую задаёт пользователь.
-# Функция round помогает «улучшать» числа с плавающей точкой.
-#
-#  Пример:
-#  3.1415926 3 -> 3.1415926 3 3.1455
-#
-#
-#
-# 11. Так как в Python операции с вещественными числами могут давать неожиданные результаты (
-# в частности, 0.1 + 0.2 не будет в точности равняться 0.3), стоит задача с этим как-то справляться.
-# Требуется написать функция eqv(a, b, c), которая принимает 3 числа. Числа a и b складываются.
-# Затем эта сумма сравнивается с числом “с” с определенной степенью точности.
-# Точность равняется 0.01 % от большего из чисел a и b.
-# Функция вернет True, если выполняется равенство, иначе False.
+# 7. Написать программу, которая печатает количество вхождений данной подстроки в строк.
+# Например, для подстроки hi, 'abc hi ho' → 1,
+# для подстроки “well”,  'ABCwell well') → 2.
+# Важно: запрещено использование метода count()
+
+def count_sub_string_insert(some_string: str, sub_string: str):
+    if (len(some_string) or len(sub_string)) == 0:
+        return False
+    start_position = 0
+    count_sub_string = 0
+    count_sab_string_insert = 0
+    for varcha in sub_string:
+        count_sub_string += 1
+    while start_position + count_sub_string <= len(some_string):
+        some_sub_string = some_string[start_position:start_position+count_sub_string]
+        if some_sub_string == sub_string:
+            count_sab_string_insert += 1
+        start_position += 1
+    return count_sab_string_insert
+
+
+# 8. Для данной строки, напечатать строку, где каждый символ повторяется дважды,
+# например, 'The' → 'TThhee', 'AAbb' → 'AAAAbbbb'.
+# Подсказка: перебрать i по каждому значению индекса в строке 0, 1, 2, .. len-1.
+
+def ignorance_buch(some_string: str):
+    new_string = ""
+    for buch in some_string:
+        new_string += buch
+        new_string += buch
+    return new_string
+
+
+
+
+# 9. Написать программу, которая по заданной длине катетов прямоугольного треугольника
+# вычисляет длину гипотенузы.
+# Поменяйте программу так, чтобы длина гипотенузы выводилась
+# с точностью до двух знаков после запятой.
+
+def calculation_of_hypotenuse(a: float):
+    return round(math.sqrt((2*a)**2), 2)
+
+
+
+# 10. Написать программу, которая по данному радиусу вычисляет:
+# длину окружности (2pi*r), площадь круга (pi * r ^ 2), объем шара (4/3)*pi*r^3).
+
+def
+
+
+# 11. Написать программу, которая считывает 5 вещественных чисел с клавиатуры
+# и печатает сумму этих чисел с точностью до одного знака после запятой.
 
 
 if __name__ == '__main__':
-    # print(count_numbers(6))
-    # print(fibonacci(6))
-    # print(find_degree(9))
-    print(smallest_natural_number(17))
+    # print(hello("Anastasia"))
+    # print(render_html("div", "Anastasia"))
+    # print(ignorance_string("Hello"))
+    # print(get_midle_string("Python"))
+    # print(two_string('hi',"Python"))
+    # print(find_tiere("cotasdasdcatdog"))
+    # print(count_sub_string_insert("catcatcatcatcatcatcatcatcat", "cat"))
+    print(ignorance_buch("Hello"))
+    print(calculation_of_hypotenuse(9.99))
