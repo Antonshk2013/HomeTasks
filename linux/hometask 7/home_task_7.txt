@@ -1,12 +1,32 @@
-Создайте файл file.txt при помощи vi или nano в папке /tmp
-Добавьте в него 3 первые строчки из вывода команды df -h
-Дайте права для группы пользователей на запись и исполнение.
-Уберите права для всех остальных.
-Создайте файл myfirstbashscript.sh где угодно.
-Сделайте его исполняемым.
-Заведите новую переменную USER и присвойте ей ваше имя в качестве значения.
-Добавьте в него необходимую команду или вызов переменной, чтобы скрипт написал, из какой директории он работает (откуда он был запущен)
-Допишите в /tmp/file.txt содержимое myfirstbashscript.sh
-После всех операций, допишите в /tmp/file.txt историю команд.
-Пришлите /tmp/file.txt при помощи export_file /tmp/file.txt
+
+Filesystem                Size      Used Available Use% Mounted on
+/dev/root                 4.9G      2.3G      2.6G  47% /
+devtmpfs                 91.3M         0     91.3M   0% /dev
+#!/bin/ch
+USER=ANTON
+echo "Script started by:$USER"
+echo "Script started from: $PWD"
+   0 mkdir tmp
+   1 nano tmp/file.txt
+   2 екуу
+   3 tree
+   4 nano tmp/file.txt
+   5 tree
+   6 df -h | head -3>>tmp/file.txt
+   7 ls -al /tmp/
+   8 cd tmp/
+   9 ls -al
+  10 chmod g+rx,o-r file.txt
+  11 ls -al
+  12 chmod g+wx file.txt
+  13 ls -al
+  14 echo "#!/bin/ch">myfirstbashscript.sh
+  15 echo "USER=ANTON">myfirstbashscript.sh
+  16 echo "echo \"Script started by:\$USER\"">>myfirstbashscript.sh
+  17 cat myfirstbashscript.sh
+  18 echo "echo \"Script started from: \$PWD\"">>myfirstbashscript.sh
+  19 cat myfirstbashscript.sh
+  20 cat myfirstbashscript.sh>>file.txt
+  21 cat file.txt
+  22 history>>file.txt
 
