@@ -29,7 +29,7 @@ SELECT round(avg(c.LifeExpectancy),0) from country c
 
 /*Найдите самый населенный город (подсказка: использовать подзапросы)*/
 /*Самый населенный город в рамках всех стран*/
-SELECT max(Population) from city c;
+SELECT c2.name from city c2 where c2.Population=(SELECT max(Population) from city c);
 
 /*Самый населенный город в рамках каждой страны*/
 SELECT
