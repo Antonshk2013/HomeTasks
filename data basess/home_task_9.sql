@@ -13,14 +13,14 @@ SELECT DATE_FORMAT(NOW(), '%H:%i:%s') as curent_year_and_month;
 /*Вывести название текущего дня недели*/
 
 SELECT
-CASE
-WHEN WEEKDAY(NOW()) = 0 THEN 'Воскресение'
-WHEN WEEKDAY(NOW()) = 1 THEN 'Понедельник'
-WHEN WEEKDAY(NOW()) = 2 THEN 'Вторник'
-WHEN WEEKDAY(NOW()) = 3 THEN 'Среда'
-WHEN WEEKDAY(NOW()) = 4 THEN 'Четверг'
-WHEN WEEKDAY(NOW()) = 5 THEN 'Пятница'
-WHEN WEEKDAY(NOW()) = 6 THEN 'Суббота'
+CASE WEEKDAY(NOW())
+WHEN 0 THEN 'Понедельник'
+WHEN 1 THEN 'Вторник'
+WHEN 2 THEN 'Среда'
+WHEN 3 THEN 'Четверг'
+WHEN 4 THEN 'Пятница'
+WHEN 5 THEN 'Суббота'
+WHEN 6 THEN 'Воскресение'
 END as 'week_day';
 
 
