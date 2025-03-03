@@ -8,25 +8,15 @@
 # Введите целое число: 12321
 # Число является палиндромом.
 
-# def get_lang_count(number: int) -> int:
-#     rest = 0
-#     dec
-#     while
-
-def is_polimdrome():
-    number = int(input('Enter a number: '))
-    if number % 10 == 0 or number < 10:
-        print(f'{number} cannot be polim drome')
-    a = 0
-    #Определить максимальную разрядность
-    dec = 10
-    while a < 10:
-        result = number%dec
-        print(f"При делиметре в {dec} остаток {result}")
-        dec *= 10
-        a += 1
-    print(a)
-
+def is_polindrome(number: int) -> bool:
+    print("Start")
+    number1 = number
+    number2 = 0
+    while number:
+        number2 *= 10
+        number2 += number % 10
+        number = number // 10
+    return True if number1 == number2 else False
 
 # 2. Напишите программу, которая запрашивает у пользователя целое число и проверяет,
 # является ли оно числом Армстронга.
@@ -40,13 +30,16 @@ def is_polimdrome():
 # Число является числом Армстронга.
 
 
+def is_armstromg_number(number: int) -> bool:
+    digit_len = len(str(abs(number)))
+    return number == sum([int(i) ** digit_len for i in str(abs(number))])
+
+
 if __name__ == '__main__':
-    print(str(f"0 in binary {str(bin(0))}"))
-    print(str(f"1 in binary {str(bin(1))}"))
-    print(str(f"2 in binary {str(bin(2))}"))
-    print(str(f"3 in binary {str(bin(3))}"))
-    print(str(f"4 in binary {str(bin(4))}"))
-    print(str(f"5 in binary {str(bin(5))}"))
-    print(str(f"6 in binary {str(bin(6))}"))
+    print(is_polindrome(12321))
+    a = 153
+    print(is_armstromg_number(a))
+    print(abs(a))
+    print(1 ** 3 + 5 ** 3 + 3 ** 3)
 
 
