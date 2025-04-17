@@ -24,3 +24,6 @@ c.Name,
 RANK() OVER(ORDER BY c.LifeExpectancy DESC) as pos_life_exp
 FROM country c) as t
 where t.pos_life_exp = 3;
+
+
+
