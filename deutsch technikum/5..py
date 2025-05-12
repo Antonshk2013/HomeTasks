@@ -1,0 +1,1 @@
+"""Schreiben Sie ein Programm, das eine Zahl vom Benutzer abfragt und alle ihre Teiler unter Verwendung einer while-Schleife ausgibt."""

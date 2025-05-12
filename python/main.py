@@ -122,12 +122,45 @@ def calculation_of_hypotenuse(a: float):
 # 10. Написать программу, которая по данному радиусу вычисляет:
 # длину окружности (2pi*r), площадь круга (pi * r ^ 2), объем шара (4/3)*pi*r^3).
 
-def
-
 
 # 11. Написать программу, которая считывает 5 вещественных чисел с клавиатуры
 # и печатает сумму этих чисел с точностью до одного знака после запятой.
 
+def spin_words(sentence):
+    # Your code goes here
+    string_list = sentence.split(" ")
+    for i in range(len(string_list)):
+        if len(string_list[i]) >= 5:
+            string_list[i] = string_list[i][::-1]
+    return " ".join(string_list)
+
+def replace_exclamation(st):
+    return "".join([i if i not in 'aeiouAEIOU' else "!" for i in st])
+
+def derive(coefficient, exponent):
+    return f"{coefficient*exponent}x^{exponent-1}"
+
+def positive_sum(arr):
+    arr_sum = sum([number if number>0 else 0 for number in arr])
+    #
+    # for number in arr:
+    #     arr_sum += number if number > 0 else 0
+    # # [arr_sum = arr_sum + number for number in arr]
+    return arr_sum\
+
+def is_valid_parenthesses(sequense: str)->bool:
+    return sum([1 if i == '(' else 0 for i in sequense]) == sum([1 if i == ')' else 0 for i in sequense])
+
+def is_valid_parenthesses(sequense: str)->bool:
+    return sum([1 if i == '3' else 0 for i in sequense]) == sum([1 if i == ')' else 0 for i in sequense])
+
+
+"""На вход программе подается натуральное число n, а затем n строк. 
+    Напишите программу, которая создает список из символов всех строк, а 
+    затем выводит его. В результирующем списке могут содержаться одинаковые символы."""
+
+def buils_string(index_count, *args):
+    return "".join(map(str, args))
 
 if __name__ == '__main__':
     # print(hello("Anastasia"))
@@ -137,5 +170,22 @@ if __name__ == '__main__':
     # print(two_string('hi',"Python"))
     # print(find_tiere("cotasdasdcatdog"))
     # print(count_sub_string_insert("catcatcatcatcatcatcatcatcat", "cat"))
-    print(ignorance_buch("Hello"))
-    print(calculation_of_hypotenuse(9.99))
+    # print(ignorance_buch("Hello"))
+    # print(calculation_of_hypotenuse(9.99))
+    # print(spin_words("Hey wollef warriors"))
+    # print(replac,_exclamation("ABCDE"))
+    # print(derive(7,8))
+    # print(positive_sum([1,2,3,-10, 10]))
+    #
+    # numbers = [1, 2, 3, 4]
+    # next = [20, 30, 40]
+    # numbers.append(next)
+    # print(numbers)
+    # next.append(50)
+    # print(numbers)
+    # print(is_valid_parenthesses('))'))
+
+    """На вход программе подается натуральное число n, а затем n строк. 
+    Напишите программу, которая создает список из символов всех строк, а 
+    затем выводит его. В результирующем списке могут содержаться одинаковые символы."""
+

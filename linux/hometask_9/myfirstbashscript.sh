@@ -1,4 +1,4 @@
-#!/bin/sh
+git #!/bin/sh
 USER=ANTON
 date
 echo "hello $USER"
