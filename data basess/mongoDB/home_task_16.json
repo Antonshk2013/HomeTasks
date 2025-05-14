@@ -1,0 +1,42 @@
+{
+  //Найдите средний возраст из коллекции ich.US_Adult_Income
+  "task1": [
+  {
+    $group:
+      /**
+       * _id: The id of the group.
+       * fieldN: The first field name.
+       */
+      {
+        _id: null,
+        averageAge: {
+          $avg: "$age"
+        }
+      }
+  }
+],
+  //Поменяв подключение к базе данных, создать коллекцию orders_NAME (для уникальности - добавим ваше имя в название)
+  //со свойствами id, customer, product, amount, city, используя следующие данные:
+  "task2": db.orders.insertMany([
+  {
+    id: 1,
+    customer: "Olga",
+    product: "Apple",
+    amount: 15.55,
+    city: "Berlin"
+  },
+  {
+      id: 2,
+    customer: "Olga",
+    product: "Apple",
+    amount: 15.55,
+    city: "Berlin"
+  }
+  }
+  //
+  "task3": "",
+  //
+  "task4":"",
+  //
+  "task5":""
+}

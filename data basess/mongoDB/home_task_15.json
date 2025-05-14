@@ -1,0 +1,126 @@
+{
+  //Коллекция imdb : Используя оператор $size , найдите фильмы, написанные 3 сценаристами (writers) и снятые 2 режиссерами (directors)
+  "task1": [
+  {
+    $match:
+      /**
+       * query: The query in MQL.
+       */
+      {
+        writers: {
+          $size: 3
+        },
+        directors: {
+          $size: 2
+        }
+      }
+  }
+],
+  //Коллекция bookings: Найдите адрес нахождения автомобиля с vin WME4530421Y135045 по самой последней дате (и времени) final_date
+  "task2": [
+  {
+    $match:
+      /**
+       * query: The query in MQL.
+       */
+      {
+        vin: "WME4530421Y135045"
+      }
+  },
+  {
+    $sort:
+      /**
+       * Provide any number of field/order pairs.
+       */
+      {
+        final_date: -1,
+        final_time: -1
+      }
+  },
+  {
+    $limit:
+      /**
+       * Provide the number of documents to limit.
+       */
+      1
+  }
+],
+  //Коллекция bookings: подсчитайте, у скольких автомобилей при окончании аренды закончилось топливо (final_fuel)
+  "task3": [
+  {
+    $match:
+      /**
+       * query: The query in MQL.
+       */
+      {
+        final_fuel: 0
+      }
+  },
+  {
+    $count:
+      /**
+       * Provide the field name for the count.
+       */
+      "count_final_fuel"
+  }
+],
+  //Коллекция bookings: найдите номерной знак и vin номер авто, с самым большим километражом (distance)
+  "task4":[
+  {
+    $sort:
+      /**
+       * query: The query in MQL.
+       */
+      {
+        distance: -1
+      }
+  },
+  {
+    $limit:
+      /**
+       * Provide the number of documents to limit.
+       */
+      1
+  },
+  {
+    $project:
+      /**
+       * specifications: The fields to
+       *   include or exclude.
+       */
+      {
+        _id: 0,
+        vin: 1,
+        plate: 1
+      }
+  }
+],
+  //Коллекция imdb. Найдите фильм с участием "Brad Pitt" с самым высоким рейтингом (imdb.rating)
+  "task5":[
+  {
+    $match:
+      /**
+       * query: The query in MQL.
+       */
+      {
+        cast: "Brad Pitt"
+      }
+  },
+  {
+    $sort:
+      /**
+       * Provide any number of field/order pairs.
+       */
+      {
+        "imdb.rating": -1
+      }
+  },
+  {
+    $limit:
+      /**
+       * Provide the number of documents to limit.
+       */
+      1
+  }
+]
+}
