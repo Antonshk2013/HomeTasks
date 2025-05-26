@@ -45,17 +45,17 @@ db["listingsAndReviews"].aggregate([
 db.listingsAndReviews.aggregate([
   {
     $match: {
-      number_of_reviews: { $gte: 50 }   // фильтруем по минимуму отзывов
+      number_of_reviews: { $gte: 50 }   
     }
   },
   {
     $sort: {
-      "review_scores.review_scores_rating": -1  // сортируем по убыванию рейтинга
+      "review_scores.review_scores_rating": -1  
     }
   },
   {
-    $limit: 1    // берём только один — с самым высоким рейтингом
-  },
+    $limit: 1   
+       },
   {
     $project: {
       _id: 0,
